@@ -55,3 +55,6 @@ resource "ibm_database" "db" {
 output "connectionString" {
   value = "http://${"${ibm_database.db.connectionstrings.0.composed}"}"
 }
+output "certificate_base64" {
+  value = "${ibm_database.db.connectionstrings.0.certbase64}"
+}
